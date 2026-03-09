@@ -29,6 +29,7 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
+    "pub": "bumpp",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
