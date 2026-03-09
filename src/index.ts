@@ -1,5 +1,2 @@
-export function fn() {
-  return 'Hello, tsdown!'
-}
-
-export * from './math';
+export * from "./math";
+export * from "./objects";
