@@ -1,5 +1,5 @@
 import { expect, test, describe } from 'vitest'
-import { deepCopy, mergeObjects } from '../src/objects'
+import { deepCopy, mergeObjects } from '@/objects'
 
 describe('deepCopy', () => {
   test('should copy primitive types', () => {
@@ -77,7 +77,13 @@ describe('deepCopy', () => {
 
   test('should copy arrays with mixed types including objects and dates', () => {
     const date = new Date('2024-01-15')
-    const originalArray = [
+    const originalArray: [
+      number,
+      { name: string; value: number },
+      number[],
+      Date,
+      string
+    ] = [
       1,
       { name: 'test', value: 100 },
       [1, 2, 3],

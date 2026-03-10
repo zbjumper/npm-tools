@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
-import { getTimeAgo } from '../src/time'
+import { getTimeAgo } from '@/time'
 
 describe('getTimeAgo', () => {
   beforeEach(() => {
