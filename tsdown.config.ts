@@ -5,6 +5,7 @@ export default defineConfig({
   dts: {
     tsgo: true,
   },
+  platform: "neutral",
   exports: true,
   alias: {
     "@": "./src",
