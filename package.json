@@ -29,7 +29,7 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc -p tsconfig.app.json --noEmit",
-    "pub": "bumpp && pnpm publish",
+    "pub": "bumpp && pnpm publish --access public",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
