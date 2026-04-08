@@ -1,7 +1,7 @@
 {
   "name": "@zbkit/tools",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A starter for creating a TypeScript package.",
   "author": "Bill Zhang <zbjumper@gmail.com>",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc -p tsconfig.app.json --noEmit",
-    "pub": "bumpp && pnpm publish --access public",
+    "pub": "bumpp --commit --tag && pnpm publish --access public",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
