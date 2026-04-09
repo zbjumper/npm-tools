@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
-import { getTimeAgo } from '@/time'
+import { formatTime, getTimeAgo } from '@/time'
 
 describe('getTimeAgo', () => {
   beforeEach(() => {
@@ -44,5 +44,21 @@ describe('getTimeAgo', () => {
   test('should support numeric string timestamp', () => {
     const nowSeconds = Math.floor(Date.now() / 1000)
     expect(getTimeAgo(String(nowSeconds - 61))).toBe('1分1秒')
+  })
+})
+
+describe('formatTime', () => {
+  test('should format numeric timestamp', () => {
+    const date = new Date(2026, 0, 2, 3, 4, 5)
+    const timestampInSeconds = Math.floor(date.getTime() / 1000)
+
+    expect(formatTime(timestampInSeconds)).toBe('2026/01/02 03:04:05')
+  })
+
+  test('should support numeric string timestamp', () => {
+    const date = new Date(2024, 10, 9, 8, 7, 6)
+    const timestampInSeconds = String(Math.floor(date.getTime() / 1000))
+
+    expect(formatTime(timestampInSeconds)).toBe('2024/11/09 08:07:06')
   })
 })
