@@ -19,6 +19,11 @@ All commands use **pnpm** (required by `engines` in package.json):
 | `pnpm run typecheck` | Type-check without emitting (`tsc --noEmit`) |
 | `pnpm run pub` | Bump version, commit, tag, and publish to npm |
 
+## For AI (MUST CHECK)
+
+- 每次逻辑代码实现新类、新方法后，务必添加单元测试代码
+- 每次修改逻辑后，务必执行**单元测试**以验证是否逻辑正确
+
 ## Architecture
 
 ### Module Structure
