@@ -50,15 +50,15 @@ describe('getTimeAgo', () => {
 describe('formatTime', () => {
   test('should format numeric timestamp', () => {
     const date = new Date(2026, 0, 2, 3, 4, 5)
-    const timestampInSeconds = Math.floor(date.getTime() / 1000)
+    const timestampInMs = date.getTime()
 
-    expect(formatTime(timestampInSeconds)).toBe('2026/01/02 03:04:05')
+    expect(formatTime(timestampInMs)).toBe('2026/01/02 03:04:05')
   })
 
   test('should support numeric string timestamp', () => {
     const date = new Date(2024, 10, 9, 8, 7, 6)
-    const timestampInSeconds = String(Math.floor(date.getTime() / 1000))
+    const timestampInMs = String(date.getTime())
 
-    expect(formatTime(timestampInSeconds)).toBe('2024/11/09 08:07:06')
+    expect(formatTime(timestampInMs)).toBe('2024/11/09 08:07:06')
   })
 })
