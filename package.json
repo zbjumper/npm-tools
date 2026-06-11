@@ -30,14 +30,18 @@
     "test": "vitest",
     "typecheck": "tsc -p tsconfig.app.json --noEmit",
     "pub": "bumpp --commit --tag && npm_tag=$(node -e \"const v=require('./package.json').version;const m=v.match(/-(alpha|beta|rc)\\./);console.log(m?m[1]:'latest')\") && pnpm publish --access public --tag $npm_tag",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@types/node": "^25.9.2",
-    "@typescript/native-preview": "7.0.0-dev.20260609.1",
+    "@typescript/native-preview": "7.0.0-dev.20260611.2",
     "bumpp": "^11.1.0",
     "tsdown": "^0.22.2",
     "typescript": "^6.0.3",
+    "vitepress": "2.0.0-alpha.17",
     "vitest": "^4.1.8"
   },
   "engines": {
