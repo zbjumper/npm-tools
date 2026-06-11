@@ -1,28 +1,55 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "tools",
-  description: "基础工具汇总",
+  title: "@zbkit/tools",
+  description: "TypeScript 实用工具库",
+  base: '/zbkit/tools/',
+  lang: 'zh-CN',
+
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '指南', link: '/guide/getting-started' },
+      { text: 'API 参考', link: '/api/array' },
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/guide/': [
+        {
+          text: '指南',
+          items: [
+            { text: '快速开始', link: '/guide/getting-started' },
+          ]
+        }
+      ],
+      '/api/': [
+        {
+          text: 'API 参考',
+          items: [
+            { text: 'Array 数组', link: '/api/array' },
+            { text: 'Guard 断言', link: '/api/guard' },
+            { text: 'Objects 对象', link: '/api/objects' },
+            { text: 'Time 时间', link: '/api/time' },
+            { text: 'Type 类型', link: '/api/type' },
+            { text: 'Regexp 正则', link: '/api/regexp' },
+            { text: 'Math 数学', link: '/api/math' },
+          ]
+        }
+      ]
+    },
+
+    outline: { label: '页面导航', level: [2, 3] },
+
+    search: {
+      provider: 'local'
+    },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/zbjumper/npm-tools' }
+    ],
+
+    footer: {
+      message: '基于 MIT 许可证发布',
+      copyright: 'Copyright © Bill Zhang'
+    },
   }
 })
