@@ -11,7 +11,10 @@ RUN apk add --no-cache --virtual .build-deps \
     && pnpm install --frozen-lockfile \
     && apk del .build-deps
 
-COPY . .
+COPY docs/.vitepress docs/.vitepress
+COPY docs/api docs/api
+COPY docs/guide docs/guide
+COPY docs/index.md docs/
 
 RUN pnpm run docs:build
 
